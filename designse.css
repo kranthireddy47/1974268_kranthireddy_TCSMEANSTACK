@@ -1,0 +1,61 @@
+.welcome{
+    color: mintcream;
+    font-size:50px;
+    text-align: center;
+}
+body{
+    background-image: url("bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 1200px;
+    background-attachment: fixed;
+}
+.username{
+    color: red;
+    font-size:30px;
+    text-align: center;
+    border-width: 8px;
+    border-color: grey;
+}
+.contain{
+    align-self: center;
+    margin-left: 290px;
+    float: left;
+}
+.anch{
+    font-style: oblique;
+    font-size: 30px;
+    color: maroon;
+
+}
+.user1{
+    color: red;
+    font-size:25px;
+    text-align: center;
+    border-width: 8px;
+    border-color: greenyellow;
+}
+.user{
+    color: red;
+    font-size:25px;
+    text-align: center;
+    border-width: 8px;
+    border-color: rgb(46, 68, 139);
+}
+.password{
+    color: yellow;
+    font-size:30px;
+    text-align: center;
+    border-width: 8px;
+    border-color:grey;
+}
+.button{
+    background-color: lightblue;
+    color: orangered;
+    padding: 6px 5px;
+    border-width: 5px;
+    margin-left: 50px;
+    text-align: center;
+    border-radius: 15deg;
+    border-color:grey;
+    align-self: center;
+}
