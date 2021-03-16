@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <script src="programmanager.js"></script>
+  <link rel="stylesheet" href="programmanager.css" />
+</head>
+<body>
+
+<P style="font-size:65px">Program Managers</P>
+<h2 style="font-size:45px"><u>Add New Budget</u></h2>
+<form>
+  <div>
+    <label style="font-size:25px"><u>Client Name</u></label>
+    <input type="text" size="30" width="34" id="client"/><br/><br/>
+    <label style="font-size:25px"><u>Project Name</u></label>
+    <input type="text" size="30" width="34" id="project"/><br/><br/>
+    <label style="font-size:25px"><u>Budget</u></label>
+    <input type="number" size="40" width="34" id="budget"/><br/>
+    <input type="button" value="Add" onclick="onFormSubmit()"  />
+    <a style="font-size:30px" href="homepage.html">Back</a>
+     </div>
+    <input type="button" value="Store In Session" onclick="storeInSession()"/>
+    <input type="button" value="Retrive from session" onclick="retrieveFromSession()"/><br/>
+
+    <table id="projectdetails">
+       <thead>
+           <tr>
+               <th>Client Name   :</th>
+               <th>Project Name  :</th>
+               <th>Budget</th>
+           </tr>
+       </thead>
+       <tbody>
+
+       </tbody>
+    </table>
+
+</form>
+
+</body>
+</html>

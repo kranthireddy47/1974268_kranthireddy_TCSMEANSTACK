@@ -1,0 +1,13 @@
+div{
+    padding: 200px;
+    border: grey solid 5px;
+    //border-width: thick: 100px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+a{font-size:40px
+}
+p{
+  font-size: 50px;
+}

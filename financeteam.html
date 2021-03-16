@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="programmanager.js"></script>
+  <style>
+  tr>td:nth-child(3),tr>th:nth-child(3){
+    text-align: right;
+  }
+  th,td{
+    padding:2px 10px;
+  }
+  table,thead,tbody,td,th{
+    border:1px solid black;
+    border-collapse: collapse;
+    padding: 26px;
+    padding-right: 26px;
+    border-width:thin;
+    border-style: double;
+
+  }
+.myDiv {
+  border: 5px outset red;
+  background-color: lightblue;
+  text-align: center;
+}
+</style>
+  </style>
+  </script>
+</head>
+<body onload="myFunction()">
+
+  <P style="font-size:55px">Finance Teams</P>
+  <h2 style="font-size:40px"><u>Annual Budget</u></h2>
+  <div class="myDiv" >
+  <form>
+  <table id="projectdetails">
+     <thead>
+         <tr>
+             <th>Client Name</th>
+             <th>Project Name</th>
+             <th>Budget</th>
+         </tr>
+     </thead>
+     <tbody id="tbody">
+
+     </tbody>
+  </table>
+</div>
+  </form>
+  <script >
+   // document.getElementById("client").innerHTML=;
+   //   console.log(obj);
+   function myFunction(){
+     var items=JSON.parse(sessionStorage.getItem('projectinfo'));
+     console.log(typeof(items))
+     console.log(items.length)
+      sum=0
+     for (k=0;k<items.length;k++){
+       var node = document.createElement("tr");
+       var client1=document.createElement("td");
+       client=document.createTextNode(items[k].client);
+       client1.appendChild(client)
+       var project1=document.createElement("td");
+       project=document.createTextNode(items[k].project);
+       project1.appendChild(project)
+       var budget1=document.createElement("td");
+       budget=document.createTextNode(items[k].budget);
+       budget1.appendChild(budget)
+       node.id="id"+k
+      sum+=parseInt(items[k].budget)
+      document.getElementById("tbody").appendChild(node);
+      document.getElementById('id'+k).appendChild(client1)
+      document.getElementById('id'+k).appendChild(project1)
+      document.getElementById('id'+k).appendChild(budget1)
+
+
+       // document.getElementById('cName').innerHTML=items[0].client;
+       // document.getElementById('pName').innerHTML=items[0].project;
+       // document.getElementById('budget').innerHTML=items[0].budget;
+     }
+     var node = document.createElement("tr");
+     node.id="sum"
+     document.getElementById("tbody").appendChild(node);
+     var client1=document.createElement("td");
+     document.getElementById("sum").appendChild(client1)
+     var project1=document.createElement("td");
+     document.getElementById("sum").appendChild(project1)
+      var budget1=document.createElement("td");
+      budget=document.createTextNode("TotalBudget:"+sum);
+      budget1.appendChild(budget)
+      document.getElementById("sum").appendChild(budget1)
+     // client=document.createTextNode(items[k].client);
+     // client1.appendChild(client)
+
+
+
+   }
+   </script>
+   <a style="font-size:30px" href="homepage.html">Back</a>
+</body>
+</html>
