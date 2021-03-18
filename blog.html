@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <style>
+    /* p {
+       text-align: center;
+      }
+    div{
+      align-items: center;
+      padding-left:35%;
+    } */
+    .mainNav{
+      position: relative;
+      display: block;
+    }
+    table{
+      width:100%;
+    }
+    .titles{
+      position: relative;
+      display: inline-block;
+      color:blue;
+      font-size: 20px;
+      padding:2px 5px;
+    }
+    .center{
+      text-align: center;
+    }
+    .marginBottom25{
+      margin-bottom:25px;
+    }
+    .add_block{
+      top: 10px;
+      position: relative;
+    }
+    #blockHead{
+      display: block;
+      position: relative;
+    }
+    .insideBlock{
+      position: relative;
+      margin:10px 15px;
+      padding:10px;
+      display:inline-block;
+      border:5px solid pink;
+    }
+    .imgsize{
+      position: relative;
+      width:150px;
+      height: 100px;
+    }
+    </style>
+    <script type="text/javascript">
+    function setItems(title,dsc,img){
+      json={
+        "title":title,
+        "dsc":dsc,
+        'image':img
+      }
+      if(!localStorage.getItem("details")){
+        localStorage.setItem("details",JSON.stringify([json]));
+      }else{
+        console.log(typeof(localStorage.getItem('details')))
+        var session=JSON.parse(localStorage.getItem('details'))
+        console.log(typeof(session))
+        session.push(json)
+        console.log(session)
+        localStorage.setItem('details',JSON.stringify(session))
+
+      }
+
+    }
+    function blockCreation(){
+      session=JSON.parse(localStorage.getItem('details'))
+      console.log(session)
+      for(var i=0;i<session.length;i++){
+        var temp="<div class='insideBlock'><p>"+session[i].title+"</p><p>"+session[i].dsc+"</p><p>"+session[i].image+"</p><img class='imgsize' src='./"+session[i].image+"'></div>"
+        document.getElementById('blockHead').innerHTML+=temp
+      }
+
+    }
+      function addBlock(){
+        var title=document.getElementById('title').value;
+        var dsc=document.getElementById('dsc').value;
+        var img=document.getElementById('img').files[0].name;
+        console.log("kp");
+        console.log(title)
+        console.log(dsc)
+        console.log(img)
+        setItems(title,dsc,img)
+
+      }
+    </script>
+</head>
+<body onload=blockCreation()>
+  <div class="container" border="2px">
+  <div class="row center">
+    <h2>Simply Blogging</h2>
+  </div>
+  <div class="row">
+    <div class="mainNav center marginBottom25">
+      <div class="titles">About Us </div>
+      <div class="titles">Contact Us </div>
+      <div class="titles">Location</div>
+      <div class="titles">Blog</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <table>
+      <thead>
+
+      </thead>
+      <tbody>
+        <tr>
+          <td>Title</td>
+          <td>
+            <div class="form-group">
+              <input type="text" class="form-control" id="title">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Articles</td>
+          <td>
+            <div class="form-group">
+              <textarea class="form-control" id="dsc"></textarea>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Image</td>
+          <td>
+            <div class="form-group">
+               <input type="file" class="form-control-file border" name="file" id="img">
+            </div>
+          </td>
+        </tr>
+        <td><a onclick="addBlock()" class="add_block" > AddBlock</a></td>
+        <tr>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+  <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6" id="blockHead"></div>
+      <div class="col-md-3"></div>
+  </div>
+  </div>
+</body>
+</html>
