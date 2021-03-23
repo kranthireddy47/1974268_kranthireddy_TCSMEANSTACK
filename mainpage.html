@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="checkout.js"></script>
+<style>
+.container {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+  .center{
+    text-align: center;
+  }
+  table{
+      width:100%;
+
+    }
+    #blockHead{
+      display: block;
+      position: relative;
+    }
+    .add_block{
+      top: 10px;
+      position: relative;
+      size:20px;
+    }
+    .insideBlock{
+      position: relative;
+      margin:10px 15px;
+      padding:20px;
+      display:inline-block;
+      border:5px solid pink;
+    }
+    .hh{
+      text-align: left;
+    }
+    .aa{
+      text-align: right;
+    }
+</style>
+</head>
+<body>
+  <div class="container" border="2px">
+    <div class="row center">
+          <h1><u>Shopping Cart</u></h1>
+          <div class="hh">
+              <h2>cart size: </h2><h2><a href="checkout1.html">checkout</a></h2>
+            </div>
+
+      <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+      <table id="cart">
+       <thead>
+
+       </thead>
+       <tbody class="insideBlock">
+        <tr>
+           <td>Item:</td>
+          <td id="item">Bag</td>
+        </tr>
+        <tr>
+          <td>Price:</td>
+          <td id="price">2534</td>
+        </tr>
+        <td><u><a onclick="addBlock()" class="add_block" >Add</a></u></td>
+        <tr>
+        <td></td>
+        </tr>
+       </tbody>
+     </table>
+     <table id="cart">
+      <thead>
+
+      </thead>
+      <tbody class="insideBlock">
+       <tr>
+          <td>Item:</td>
+         <td id="item1">Bike</td>
+       </tr>
+       <tr>
+         <td>Price:</td>
+         <td id="price1">2376</td>
+       </tr>
+       <td><u><a onclick="addBlock()" class="add_block" >Add</a></u></td>
+       <tr>
+       <td></td>
+       </tr>
+      </tbody>
+    </table>
+    <table id="cart2">
+     <thead>
+
+     </thead>
+     <tbody class="insideBlock">
+      <tr>
+         <td>Item:</td>
+        <td id="item2">Flight</td>
+      </tr>
+      <tr>
+        <td>Price:</td>
+        <td id="price2">1435</td>
+      </tr>
+      <td><u><a onclick="addBlock()" class="add_block" >Add</a></u></td>
+      <tr>
+      <td></td>
+      </tr>
+     </tbody>
+   </table>
+  </div>
+</div>
+</div>
+  <div class="col-md-3"></div>
+</div>
+<div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6" id="blockHead"></div>
+      <div class="col-md-3"></div>
+  </div>
+</div>
+</body>
+</html>
