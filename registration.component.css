@@ -1,0 +1,16 @@
+
+.kranthi{
+  align-items: center;
+
+  border: 15px solid blue;
+  padding: 180px;
+  margin: 20px;
+  text-align: center;
+  justify-content: center;
+}
+.center{
+      text-align: center;
+    }
+    .marginBottom25{
+      margin-bottom:25px;
+    }
