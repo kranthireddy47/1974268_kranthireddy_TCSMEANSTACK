@@ -1,0 +1,29 @@
+.myclass {
+  box-sizing: border-box;
+  border: 5px outset blue;
+  text-align: center;
+}
+table{
+  border: 3px solid black;
+  border-collapse: collapse;
+  width: 70%;
+  padding: 15px 15px;
+  height: 100%;
+}
+h1 {
+  color: blue;
+  font-family: verdana;
+  font-size: 300%;
+text-align:center;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+td{
+  padding: 15px 15px;
+  background-color: #ADD8E6;
+}
+tr{
+   border: 3px solid white;
+}
