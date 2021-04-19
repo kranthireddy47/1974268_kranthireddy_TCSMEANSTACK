@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Fetch All</h1>
+        <form method="POST" action="fetch">
+            <table border="1">
+
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Desc</th>
+                    <th>Amount</th>
+                </tr> 
+                <%
+                if(userData.length!=0){
+                var i=1;
+                userData.forEach(function(data){
+                %>
+                <tr>
+                    <td><%=Course._courseid %></td>
+                    <td><%=Course.coursename %></td>
+                    <td><%=Course.coursedescription} %></td>
+                    <td><%=Course.amount %></td>
+                </tr>
+                <%  i++; }) %>
+                <% } else{ %>
+                    <tr>
+                        <td colspan="7">No Data Found</td>
+                    </tr>
+                <% } %>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+
+
+<div>
+    <table border="1">
+            <tr>
+                <th>PId</th>
+                <th>ProductName</th>
+                <th>Price</th>
+            </tr>
+            <tr *ngFor="let pp of products">
+                    <td>{{pp._id}}</td>
+                    <td>{{pp.pname}}</td>
+                    <td>{{pp.price}}</td>
+            </tr>
+    </table>
+</div>

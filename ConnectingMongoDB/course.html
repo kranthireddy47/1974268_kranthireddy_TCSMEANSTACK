@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  
+    <title>Document</title>
+</head>
+<body>
+    <div style="width:800px; margin:0 auto;">
+       <h1>ADD COURSE</h1>
+       <form method="POST" action="course">
+        <table>
+            <tr>
+                <td><label>course ID</label></td>
+            <td><input type="number" name="id"></td>
+            </tr>
+            <tr>
+                <td><label>course Name</label></td>
+            <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+            <td><label>course Description</label></td>
+            <td><input type="text" name="desc"></td>
+            </tr>
+            <tr>
+            <td><label>Amount</label></td>
+            <td><input type="number" name="amount"></td>
+            </tr>    
+            <tr>
+                <td><input type="submit" value="ADD" class="btn btn-primary" style="margin-top: 30px;"></td>
+            <td><input type="reset" value="RESET" class="btn btn-danger" style="margin-top: 30px;margin-left: 100px;"></td>
+        </tr>
+        </table>
+
+       </form>
+    </div>
+</body>
+</html>
