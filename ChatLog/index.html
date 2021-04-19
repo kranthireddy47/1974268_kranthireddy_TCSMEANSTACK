@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript">
+      var socket = io();
+      function fun() {
+        var x = document.getElementById("ename").value;
+        var y = document.getElementById("area").value;
+        console.log("Hello:",x);
+        console.log("Your:",y);
+
+      socket.emit("chat message",x)
+      socket.emit("chat message",y)
+      alert('Details printed on server console');
+      }
+    </script>
+    <style>
+div {
+height: 300px;
+width: 500px;
+background-color:white;
+color:black;
+align-items: center;
+margin-left: 500px;
+border-style: solid;
+padding-left: 15px;
+
+
+}
+table{
+    padding-left: 50px;
+}
+input[type=text],[type=textarea]{
+    padding-left: 15px;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 0.4em;
+}
+input[type=button] {
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  text-align: center;
+}
+label{
+    padding-left: 5px;
+    text-decoration-style: double;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+}
+h2{
+    text-decoration-style: double;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+  <form method="POST" action="chat">
+   <div class="myclass">
+    <h2>Chatting with socket IO</h2>
+    <table>
+     <tr>
+    <td><label>Name:</label></td>
+    <td><Input type="text" id="ename"></Input></td></tr>
+    <tr><td><label>Message: </label></td>
+    <td><input type="textarea" id="area"></input></td></tr>
+    <tr><td></td><td><input type="button" value="Click Here" onclick="fun()"/></td></tr>
+</table>
+</div>
+</form>
+</body>
+</html>
